@@ -1,0 +1,14 @@
+Anesthesiology
+Laboratory Medicine
+Neurological Surgery
+Obstetrics Gynecology
+Ophthalmology
+Orthopaedics
+Otolaryngology
+Pathology
+Pediatrics
+Pharmacology
+Radiology
+Rehabilitation Medicine
+Surgery
+Urology

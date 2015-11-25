@@ -1,0 +1,77 @@
+.about {
+	margin-bottom: 0px;
+}
+
+.align-right {
+	float: right;
+}
+
+.category_pic, .artifact_pic {
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    margin-bottom: 15px;
+	max-height: 150px;
+ 	max-width: 150px;
+    padding: 8px;
+}
+
+.collection_pic {
+	border: 1px solid gray;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+	max-height: 200px;
+ 	max-width: 200px;
+    padding: 8px;
+    vertical-align: bottom;
+}
+
+.collection_title {
+	font-size: 20px;
+	margin-top: 15px;
+}
+
+	h2.artifact_num {
+	    padding-left: 5px;
+	    margin-bottom: 0px;
+	    font-size: 1em;
+	}
+
+	h2.category_title, h2.collection_title {
+		text-align: center;
+	}
+
+	h2.category_title, h2.artifact_num, h2.collection_title {
+	    font-size: 1.1em;
+	    margin-top: .1em;
+	}
+
+.holder {
+	text-align: center;
+}
+
+.profile {
+	overflow: hidden;
+}
+
+	.profile h3 {
+		font-weight: 600;
+		margin-top: 0px;
+	}
+
+	.profile img {
+		border-radius: 15px;
+		float: left;
+		margin-right: 1em;
+		width: 150px;
+	}
+
+.uw-thinstrip {
+	background-color: #39275B;
+	height: 85px;
+	padding-top: 0px;
+}
+
+.uw-body a:focus, .uw-body a:hover {
+	border: none;
+}
