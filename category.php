@@ -1,6 +1,6 @@
 <?php 
 	if (!isset($_GET["category"])) {
-		header('Location: https://depts.washington.edu/bodemer/test/index.php');
+		header('Location: https://depts.washington.edu/bodemer/');
 		die();
 	}
 ?>
@@ -32,11 +32,18 @@
 				<div class="container uw-body">
 					<div class="row">
 						<div class="col-md-8 uw-content">
+							<?php 
+								$info = mysqli_fetch_assoc($result);
+								if (!$info) {
+									woops();
+								} else { 
+							?>
 
-							<h1 class="nomargin"><?=$category?></h1>
+							<h1><?=$category?></h1>
+
 							<?php
 								$counter = 0;
-								while($info = mysqli_fetch_assoc($result)) {
+								do {
 									if ($counter % 4 == 0) { ?>
 										<div class="row">
 									<?php } ?>
@@ -50,10 +57,11 @@
 										</div>
 									<?php }
 									$counter++;
-								}
+								} while ($info = mysqli_fetch_assoc($result));
 								if (($counter - 1) % 4 != 3) { ?>
 									</div>
 								<?php } 
+							}
 							?>
 						</div>
 					</div>

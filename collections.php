@@ -6,9 +6,8 @@
 			include("common.php");
 			head(); 
 
-			$abbr = ["weed", "mckie", "minor", "desoto"];
-			$collections = ["Dr Gideon A Weed", 
-					"Dr J. F. McKie", "Dr Thomas T. Minor", "Dr A. DeSoto"];
+			$abbr = abbr();
+			$collections = collections();
 		?>
 	</head>
 
@@ -26,14 +25,23 @@
 					<div class="row">
 						<div class="col-md-8 uw-content">
 							<h1 class="nomargin">Collections</h1>
-							<?php for ($i = 0; $i < count($abbr); $i++) { ?>
-								<div class="col-md-3 col-sm-3 holder">
-									<a class="category_link" href="collection.php?physician=<?= $abbr[$i] ?>">
-										<img class="collection_pic" src="images/collections/<?= $abbr[$i] ?>.jpg" alt="<?= $collections[$i] ?>" />
-										<h2 class="collection_title"><?= $collections[$i] ?></h2>
-									</a>
-								</div> 
-							<?php } ?>
+							<?php 
+								for ($i = 0; $i < count($abbr); $i++) { 
+									if ($i % 4 == 0) { ?>
+										<div class="row"> 
+									<?php } ?>
+									<div class="col-md-3 col-sm-3 holder">
+										<a class="category_link" href="collection.php?c=<?= $abbr[$i] ?>">
+											<img class="collection_pic" src="images/collections/<?= $abbr[$i] ?>.jpg" alt="<?= $collections[$i] ?>" />
+											<h2 class="collection_title"><?= $collections[$i] ?></h2>
+										</a>
+									</div> 
+								<?php 
+									if ($i % 4 == 3) { ?>
+										</div>
+									<?php }
+								} 
+							?>
 						</div>
 					</div>
 				</div>

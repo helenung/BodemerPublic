@@ -8,6 +8,9 @@
 			$department = file("categories.txt",FILE_IGNORE_NEW_LINES);
 			$non_department = file("nondepartment.txt",FILE_IGNORE_NEW_LINES);
 			$c = isset($_GET["c"]) ? $_GET["c"] : NULL;
+			if ($c != "dept" || $c != non || $c != NULL) {
+				$c = NULL;
+			}
 		?>
 	</head>
 

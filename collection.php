@@ -1,6 +1,6 @@
 <?php 
-	if (!isset($_GET["physician"])) {
-		header('Location: https://depts.washington.edu/bodemer/test/index.php');
+	if (!isset($_GET["c"])) {
+		header('Location: https://depts.washington.edu/bodemer/');
 		die();
 	}
 ?>
@@ -12,9 +12,9 @@
 			head();
 
 			// GET variables
-			$physician = $_GET["physician"];
+			$c = $_GET["c"];
 
-			$query = "SELECT * FROM $CURRENT_REV WHERE physician LIKE \"%$physician%\"";
+			$query = "SELECT * FROM $CURRENT_REV WHERE physician LIKE \"%$c%\"";
 			$result = mysqli_query($mysqli_connection, $query);
 		?>
 		<title>BC - Collections</title>
@@ -51,6 +51,7 @@
 								if (($counter - 1) % 4 != 3) { ?>
 									</div>
 								<?php } 
+								if ($counter == 0) { woops(); }
 							?>
 						</div>
 					</div>
