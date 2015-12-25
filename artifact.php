@@ -54,7 +54,7 @@
 								<h1 class="title"><?=$info['name']?></h1>
 								<div id="mainArea">
 									<img src="artifact_images/<?=$id?>.jpg" alt="Artifact image" title="<?$info['name']?>" />
-									<h2>Medical Specialty: <span id="med_spec"><a href="http://depts.washington.edu/bodemer/category.php?category=<?=$info['uw dept']?>"><?=$info['uw dept']?></a></span></h2>
+									<h2>Medical Specialty: <span id="med_spec"><a href="http://depts.washington.edu/bodemer/category.php?category=<?=$info['uwDept']?>"><?=$info['uw dept']?></a></span></h2>
 									<hr />
 									<h2><span>Information</span></h2>
 									<ul>
