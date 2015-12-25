@@ -50,6 +50,11 @@
 	text-align: center;
 }
 
+.notAvailable {
+	font-style: italic;
+	opacity: .6;
+}
+
 .profile {
 	overflow: hidden;
 }
