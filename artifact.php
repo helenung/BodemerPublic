@@ -58,12 +58,12 @@
 									<hr />
 									<h2><span>Information</span></h2>
 									<ul>
-										<li><strong>Item Name: </strong><?=$info['name'] ? $info['name'] : notAvailable() ?></li>
-										<li><strong>Manufacturer: </strong><?=$info['manufacturer'] ? $info['manufacturer'] : notAvailable() ?></li>
-										<li><strong>Model Number: </strong><?=$info['model number'] ? $info['model number'] : notAvailable() ?></li>
-										<li><strong>Mfg Date: </strong><?=$info['mfg date'] ? $info['mfg date'] : notAvailable() ?></li>
-										<li><strong>Country of origin: </strong><?=$info['origin'] ? $info['origin'] : notAvailable() ?></li>
-										<li><strong>Medical Use: </strong><?=$info['medical use'] ? $info['medical use'] : notAvailable() ?></li>
+										<li><strong>Item Name: </strong><?=trim($info['name']) ? $info['name'] : notAvailable() ?></li>
+										<li><strong>Manufacturer: </strong><?=trim($info['manufacturer']) ? $info['manufacturer'] : notAvailable() ?></li>
+										<li><strong>Model Number: </strong><?=trim($info['model number']) ? $info['model number'] : notAvailable() ?></li>
+										<li><strong>Mfg Date: </strong><?=trim($info['mfg date']) ? $info['mfg date'] : notAvailable() ?></li>
+										<li><strong>Country of origin: </strong><?=trim($info['origin']) ? $info['origin'] : notAvailable() ?></li>
+										<li><strong>Medical Use: </strong><?=trim($info['medical use']) ? $info['medical use'] : notAvailable() ?></li>
 									</ul>
 							
 									<p>Do you have feedback for this item? <a style="color:black" href="mailto:bodemer@uw.edu?subject=Bodemer Collection question for item #<?=$id?> - <?=$info['name']?>">Email us</a></p>
