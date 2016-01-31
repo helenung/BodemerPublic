@@ -27,12 +27,17 @@
 							<h1 class="nomargin">Collections</h1>
 							<?php 
 								for ($i = 0; $i < count($abbr); $i++) { 
+
 									if ($i % 4 == 0) { ?>
 										<div class="row"> 
 									<?php } ?>
 									<div class="col-md-3 col-sm-3 holder">
 										<a class="category_link" href="collection.php?c=<?= $abbr[$i] ?>">
-											<img class="collection_pic" src="images/collections/<?= $abbr[$i] ?>.jpg" alt="<?= $collections[$i] ?>" />
+											<?php if (file_exists("images/collections/" . $abbr[$i] . ".jpg")) { ?>
+												<img class="collection_pic" src="images/collections/<?= $abbr[$i] ?>.jpg" alt="<?= $collections[$i] ?>" />
+											<?php } else { ?>
+												<img class="collection_pic" title="Image not available yet" src="HuskyDog.png" alt="default pic" />
+											<?php } ?>
 											<h2 class="collection_title"><?= $collections[$i] ?></h2>
 										</a>
 									</div> 

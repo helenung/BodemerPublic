@@ -1,13 +1,27 @@
 <?php
 	function abbr() {
-		$abbr = ["weed", "mckie", "minor", "desoto", "smith", "providence"];
+		$abbr = [ "desoto", 
+					"gunby", 
+					"metheny", 
+					"mckie", 
+					"minor", 
+					"peterkin", 
+					"providence", 
+					"smith", 
+					"weed"];
 		return $abbr;
 	}
 
 	function collections() {
-		$collections = ["Dr Gideon A. Weed", 
-				"Dr J. F. McKie", "Dr Thomas T. Minor", 
-				"Dr A. DeSoto", "Dr C. A. Smith", "Providence Hospital"];
+		$collections = ["Dr A. DeSoto", 
+						"Dr Paul C. Gunby", 
+						"Dr David Metheny",
+						"Dr J. F. McKie", 
+						"Dr Thomas T. Minor",
+						"Dr Guy Shearman Peterkin",
+						"Providence Hospital", 
+						"Dr C. A. Smith", 
+						"Dr Gideon A. Weed"];
 		return $collections;
 	}
 ?>
