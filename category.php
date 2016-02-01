@@ -41,28 +41,21 @@
 
 							<h1><?=$category?></h1>
 
-							<?php
-								$counter = 0;
-								do {
-									if ($counter % 4 == 0) { ?>
-										<div class="row">
-									<?php } ?>
-									<div class="col-md-3 col-sm-3 holder">
-										<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
-											<h2 class="artifact_num">Item <?=$info['number']?></h2>
-											<img class="artifact_pic" src="artifact_image_thumbnails/<?=$info['number']?>.jpg" alt="picture">
-										</a>
-									</div>
-									<?php if ($counter % 4 == 3) { ?>
-										</div>
-									<?php }
-									$counter++;
-								} while ($info = mysqli_fetch_assoc($result));
-								if (($counter - 1) % 4 != 3) { ?>
-									</div>
-								<?php } 
-							}
+							<?php do { 
+								$image = "artifact_image_thumbnails/" . $info['number'] . ".jpg";
+								if (!file_exists($image)) {
+									$image = "HuskyDog.png";
+								}
 							?>
+
+							<div class="col-md-3 col-sm-3 holder">
+								<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
+									<h2 class="artifact_num">Item <?=$info['number']?></h2>
+									<img class="artifact_pic" src="<?=$image?>" alt="picture">
+								</a>
+							</div>
+							<?php } while ($info = mysqli_fetch_assoc($result)); 
+							} ?>
 						</div>
 					</div>
 				</div>

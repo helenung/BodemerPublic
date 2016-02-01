@@ -16,10 +16,16 @@
     padding: 8px;
 }
 
+.colDiv {
+	height: 250px;
+}
+
 .collection_pic {
 	border: 1px solid gray;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     margin: 5px;
+    max-width: 150px;
+    max-height: 200px;
     padding: 8px;
     vertical-align: bottom;
 }
@@ -45,7 +51,12 @@
 	}
 
 .holder {
+	margin-bottom: 5px;
 	text-align: center;
+}
+
+.galItem {
+	height: 150px;
 }
 
 .notAvailable {
