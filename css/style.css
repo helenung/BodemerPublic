@@ -11,8 +11,6 @@
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     margin: 5px;
     margin-bottom: 15px;
-	max-height: 150px;
- 	max-width: 150px;
     padding: 8px;
 }
 
@@ -64,6 +62,15 @@
 	opacity: .6;
 }
 
+.peterkin {
+	text-align: center;
+}
+
+	.peterkin img {
+		margin: 1em;
+		max-width: 500px;
+	}
+
 .profile {
 	overflow: hidden;
 }
@@ -79,6 +86,17 @@
 		margin-right: 1em;
 		width: 150px;
 	}
+
+.physician_hdr {
+	margin-bottom: 10px;
+}
+
+.sub {
+	color: gray;
+	font-style: italic;
+	margin-bottom: 1.5em;
+	margin-left: 2em;
+}
 
 .uw-thinstrip {
 	background-color: #39275B;

@@ -53,8 +53,19 @@
 								
 								<h1 class="title"><?=$info['name']?></h1>
 								<div id="mainArea">
-									<img src="artifact_images/<?=$id?>.jpg" alt="Artifact image" title="<?$info['name']?>" />
-									<h2>Medical Specialty: <a href="http://depts.washington.edu/bodemer/category.php?category=<?=$info['uwDept']?>"><?=$info['uwDept']?></a></h2>
+									<?php 
+										$img = "artifact_images/" . $id . ".jpg";
+										$alt = "Artifact image";
+										$title = $info['name'];
+
+										if (!file_exists($img)) {
+											$img = "HuskyDog.png";
+											$alt = "Husky dog";
+											$title = "Artifact image not available at this time";
+										} 
+									?>
+									<img src="<?=$img?>" alt="<?=$alt?>" title="<?=$title?>" />
+									<h2>Medical Specialty: <a href="http://depts.washington.edu/bodemer/category.php?c=<?=$info['uwDept']?>"><?=$info['uwDept']?></a></h2>
 									<hr />
 									<h2><span>Information</span></h2>
 									<ul>

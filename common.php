@@ -77,7 +77,7 @@
 							foreach($department as $category) { ?>
 								<li>
 	                                <a tabindex="<?= $TABINDEX ?>" href=
-	                                "https://depts.washington.edu/bodemer/category.php?category=<?=$category?>"
+	                                "https://depts.washington.edu/bodemer/category.php?c=<?=$category?>"
 	                                title="<?=$category?>"><?=$category?></a>
 	                            </li>
 							<?php } 
@@ -99,7 +99,7 @@
 								foreach($non_department as $category) { ?>
 									<li>
 		                                <a tabindex="<?= $TABINDEX ?>" href=
-		                                "https://depts.washington.edu/bodemer/category.php?category=<?=$category?>"
+		                                "https://depts.washington.edu/bodemer/category.php?c=<?=$category?>"
 		                                title="<?=$category?>"><?=$category?></a>
 		                            </li>
 								<?php } ?>

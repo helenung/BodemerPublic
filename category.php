@@ -1,5 +1,5 @@
 <?php 
-	if (!isset($_GET["category"])) {
+	if (!isset($_GET["c"])) {
 		header('Location: https://depts.washington.edu/bodemer/');
 		die();
 	}
@@ -12,17 +12,19 @@
 			head();
 
 			// GET variables
-			$category = $_GET["category"];
+			$c = $_GET["c"];
 
-			$query = "SELECT * FROM $CURRENT_REV WHERE uwdept LIKE \"%$category%\"";
-			if ($category == "Unclassified") {
+			$query = "SELECT * FROM $CURRENT_REV "
+					. "WHERE uwdept LIKE \"%$c%\""
+					. "ORDER BY number ASC";
+			if ($c == "Unclassified") {
 				$query = "SELECT * FROM $CURRENT_REV WHERE uwdept = \"\"";
 			}
 
 			$result = mysqli_query($mysqli_connection, $query);
 			
 		?>
-		<title>BC - <?=$category?></title>
+		<title>BC - <?=$c?></title>
 	</head>
 
 	<body>
@@ -31,30 +33,48 @@
 				<?= banner(); ?>
 				<div class="container uw-body">
 					<div class="row">
-						<div class="col-md-8 uw-content">
+						<div class="col-md-12 uw-content">
 							<?php 
+								$count = 0;
 								$info = mysqli_fetch_assoc($result);
 								if (!$info) {
 									woops();
 								} else { 
 							?>
 
-							<h1><?=$category?></h1>
+							<h1><?=$c?></h1>
+							<p class="sub">Click on image for item information</p>
+							
 
-							<?php do { 
-								$image = "artifact_image_thumbnails/" . $info['number'] . ".jpg";
-								if (!file_exists($image)) {
-									$image = "HuskyDog.png";
-								}
-							?>
+								<?php do { 
+									$image = "artifact_images_half/" . $info['number'] . ".jpg";
+									$alt = $info['name'];
+									$title = $alt;
+									if (!file_exists($image)) {
+										$image = "HuskyDog.png";
+										$alt = "a cute Husky dog";
+										$title = "artifact image not currently available";
+									}
 
-							<div class="col-md-3 col-sm-3 holder">
-								<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
-									<h2 class="artifact_num">Item <?=$info['number']?></h2>
-									<img class="artifact_pic" src="<?=$image?>" alt="picture">
-								</a>
+									if ($count % 4 == 0) { ?>
+							<div class="row">
+									<?php } ?>
+
+								<div class="col-md-3 col-sm-3">
+									<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
+										<img class="artifact_pic" src="<?=$image?>" alt="<?=$alt?>" title="<?=$title?>">
+									</a>
+								</div>
+
+								<?php 
+									if ($count % 4 == 3) { ?>
 							</div>
-							<?php } while ($info = mysqli_fetch_assoc($result)); 
+									<?php } 
+									$count++;
+								} while ($info = mysqli_fetch_assoc($result)); 
+									if ($count % 4 != 0) { ?>
+							</div>
+								<?php }
 							} ?>
 						</div>
 					</div>

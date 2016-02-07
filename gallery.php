@@ -18,22 +18,44 @@
 				<?= banner(); ?>
 				<div class="container uw-body">
 					<div class="row">
-						<div class="col-md-8 uw-content">
+						<div class="col-md-12 uw-content">
 							<h1 class="nomargin">Gallery</h1>
-							<?php do { 
-								if (file_exists("artifact_image_thumbnails/" . $info['number'] . ".jpg")) {
-								?>
+							<p class="sub">Click on image for item information</p>
 
-							<div class="col-md-3 col-sm-3 holder galItem">
-								<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
-									<img class="artifact_pic" src="artifact_image_thumbnails/<?=$info['number']?>.jpg" alt="picture" title="<?=$info['name']?>">
-								</a>
+							<?php 
+							$counter = 0;
+							do { 
+								$image = "artifact_images_half/" . $info['number'] . ".jpg"; 
+								$alt = $info['name'];
+								$title = $info['name'];
+								if (!file_exists($image)) {
+									$image = "HuskyDog.png";
+									$alt = "a cute Husky dog";
+									$title = "artifact image not currently available";
+								}
+								if ($counter % 4 == 0) {
+								?>
+							<div class="row">
+							<?php } ?>
+
+								<div class="col-md-3 col-sm-3">
+									<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
+										<img class="artifact_pic" src="<?=$image?>" alt="<?=$alt?>" title="<?=$title?>">
+									</a>
+								</div>
+
+							<?php 
+								if ($counter % 4 == 3) { ?>
 							</div>
 
 							<?php 
-								}
-							} while ($info = mysqli_fetch_array( $data )); ?>
+								}	
+								$counter++;
+							} while ($info = mysqli_fetch_array( $data )); 
 
+							if ($counter % 4 != 3) { ?>
+							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
