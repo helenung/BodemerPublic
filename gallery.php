@@ -4,7 +4,7 @@
 		<title>BC - Gallery</title>
 		<?php 
 			include("common.php");
-			head();
+			head(".");
 			$data = mysqli_query($mysqli_connection, 
 					"SELECT * FROM $CURRENT_REV
 					ORDER BY number ASC");
@@ -15,7 +15,7 @@
 	<body>
 		<div id="uw-container">
 			<div id="uw-container-inner">
-				<?= banner(); ?>
+				<?= banner("."); ?>
 				<div class="container uw-body">
 					<div class="row">
 						<div class="col-md-12 uw-content">

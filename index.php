@@ -6,7 +6,7 @@
 		<title>Bodemer Collection</title>
 		<?php 
 			include("common.php");
-			head();
+			head(".");
 		?>
 	</head>
 	
@@ -14,7 +14,7 @@
 		
 		<div id="uw-container">
 			<div id="uw-container-inner">
-				<?= banner(); ?>
+				<?= banner("."); ?>
 				<div class="container uw-body">
 					<div class="row">
 						<div class="col-md-8 uw-content">

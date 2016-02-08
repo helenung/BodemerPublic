@@ -9,7 +9,7 @@
 	<head>
 		<?php
 			include("common.php");
-			head();
+			head(".");
 
 			// GET variables
 			$id = $_GET["id"];
@@ -29,7 +29,7 @@
 	<body>
 		<div id="uw-container">
 			<div id="uw-container-inner">
-				<?= banner(); ?>
+				<?= banner("."); ?>
 				<div class="container uw-body">
 
 					<?php

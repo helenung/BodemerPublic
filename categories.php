@@ -4,7 +4,7 @@
 		<title>BC - Categories</title>
 		<?php 
 			include("common.php");
-			head();
+			head(".");
 			$department = file("categories.txt",FILE_IGNORE_NEW_LINES);
 			$non_department = file("nondepartment.txt",FILE_IGNORE_NEW_LINES);
 			// decide whether to show departments, non-departments, or both
@@ -19,7 +19,7 @@
 	<body>
 		<div id="uw-container">
 			<div id="uw-container-inner">
-				<?= banner(); ?>
+				<?= banner("."); ?>
 				<div class="container uw-body">
 					<div class="row">
 						<div class="col-md-8 uw-content">

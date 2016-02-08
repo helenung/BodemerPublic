@@ -10,7 +10,7 @@
 		<?php
 			include("common.php");
 			include("specialCollections.php");
-			head();
+			head(".");
 
 			// GET variables
 			$c = $_GET["c"];
@@ -39,7 +39,7 @@
 	<body>
 		<div id="uw-container">
 			<div id="uw-container-inner">
-				<?= banner(); ?>
+				<?= banner("."); ?>
 				<div class="container uw-body">
 					<div class="row">
 						<div class="col-md-12 uw-content">
