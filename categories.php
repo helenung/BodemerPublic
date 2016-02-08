@@ -22,7 +22,7 @@
 				<?= banner("."); ?>
 				<div class="container uw-body">
 					<div class="row">
-						<div class="col-md-8 uw-content">
+						<div class="col-md-12 uw-content">
 							<?php if ($c == NULL || $c == "dept") { ?>
 							<h1>Departments in School of Medicine</h1>
 							<?php 

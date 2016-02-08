@@ -23,7 +23,7 @@
 				<?= banner("."); ?>
 				<div class="container uw-body">
 					<div class="row">
-						<div class="col-md-8 uw-content">
+						<div class="col-md-12 uw-content">
 							<h1 class="nomargin">Collections</h1>
 							
 							<?php 
@@ -38,10 +38,10 @@
 							<div class="row">
 									<?php } ?>
 
-								<div class="col-md-3 col-sm-3">
+								<div class="col-md-3 col-sm-3 holder">
 									<a class="category_link" href="collection.php?c=<?= $abbr[$i] ?>">
-										<img class="collection_pic" src="<?=$image?>" alt="<?= $collections[$i] ?>" />
 										<h2 class="collection_title"><?= $collections[$i] ?></h2>
+										<img class="collection_pic" src="<?=$image?>" alt="<?= $collections[$i] ?>" />
 									</a>
 								</div> 
 									<?php 
