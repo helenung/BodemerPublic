@@ -38,7 +38,7 @@
 							<div class="row">
 							<?php } ?>
 
-								<div class="col-md-3 col-sm-3">
+								<div class="gallery-div col-md-3 col-sm-3">
 									<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
 										<img class="artifact_pic" src="<?=$image?>" alt="<?=$alt?>" title="<?=$title?>">
 									</a>

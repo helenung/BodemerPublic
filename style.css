@@ -6,6 +6,10 @@
 	float: right;
 }
 
+.artifact_pic {
+	max-height: 23vh;
+}
+
 .category_pic, .artifact_pic {
     border: 1px solid gray;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -22,7 +26,6 @@
 	border: 1px solid gray;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     margin: 5px;
-
     padding: 8px;
     vertical-align: bottom;
 }
@@ -48,12 +51,21 @@
 	font-size: 1.1em;
 }
 
+.collection-div {
+    width: 25vw;
+    height: 40vh;
+}
+
 .holder {
 	text-align: center;
 }
 
 .galItem {
 	height: 150px;
+}
+
+.gallery-div {
+	height: 25vh;
 }
 
 .notAvailable {

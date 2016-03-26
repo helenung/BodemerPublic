@@ -27,9 +27,6 @@
 				$cQuery = "clarence";
 			}
 
-
-
-
 			$query = "SELECT * FROM $CURRENT_REV WHERE physician LIKE \"%$cQuery%\"";
 			$result = mysqli_query($mysqli_connection, $query);
 		?>
@@ -68,7 +65,7 @@
 										if ($counter % 3 == 0) { ?>
 											<div class="row">
 									<?php } ?>
-									<div class="col-md-4 col-sm-4 holder">
+									<div class="collection-div col-md-4 col-sm-4 holder">
 										<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
 											<img class="collection_item" src="<?=$image?>" alt="<?=$alt?>" title="<?=$title?>" />
 										</a>
