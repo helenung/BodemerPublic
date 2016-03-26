@@ -6,15 +6,19 @@
 	float: right;
 }
 
-.artifact_pic {
-	max-height: 23vh;
+.artifact_pic, .collection_pic {
+	/*max-height: 100%;*/
+	/*max-width: 100%;*/
+	width: 20vw;
+	/*max-width: 20vw;*/
+	/*max-height: 25vh;*/
 }
 
-.category_pic, .artifact_pic {
-    border: 1px solid gray;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    margin: 5px;
-    margin-bottom: 15px;
+.category_pic, .artifact_pic, .collection_item {
+    /*border: 1px solid gray;*/
+    /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+    /*margin: 5px;*/
+    /*margin-bottom: 15px;*/
     padding: 8px;
 }
 
@@ -23,11 +27,13 @@
 }
 
 .collection_pic {
-	border: 1px solid gray;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     margin: 5px;
     padding: 8px;
     vertical-align: bottom;
+}
+
+.collection_item {
+	/*width: 25vw;*/
 }
 
 .collection_title {
@@ -56,6 +62,10 @@
     height: 40vh;
 }
 
+.collection-header {
+	text-align: center;
+}
+
 .holder {
 	text-align: center;
 }
@@ -65,7 +75,8 @@
 }
 
 .gallery-div {
-	height: 25vh;
+	height: 20vh;
+	width: 20vw;
 }
 
 .notAvailable {
@@ -101,6 +112,8 @@
 .physician_hdr {
 	margin-bottom: 10px;
 }
+
+
 
 .sub {
 	color: gray;

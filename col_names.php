@@ -5,34 +5,36 @@
 
 	function abbr() {
 		$abbr = [ 
+					"koluda",
+					"mckie", 
+					"minor", 
+					"providence", 
+					"smith", 
+					"weed",
 					"convention",
 					"desoto", 
 					"gunby", 
 					"metheny", 
-					"mckie", 
-					"minor", 
 					"peterkin", 
-					"plummer",
-					"providence", 
-					"smith", 
-					"weed"
+					"plummer"
 				];
 		return $abbr;
 	}
 
 	function collections() {
 		$collections = [
+							"Dr Stanislaw B. Koluda",
+							"Dr J. F. McKie", 
+							"Dr Thomas T. Minor",
+							"Providence Hospital", 
+							"Dr Clarence A. Smith", 
+							"Dr Gideon A. Weed",
 							"A.M.A. Convention Exhibit",
 							"Dr A. DeSoto", 
 							"Dr Paul C. Gunby", 
 							"Dr David Metheny",
-							"Dr J. F. McKie", 
-							"Dr Thomas T. Minor",
 							"Dr Guy Shearman Peterkin",
-							"Dr Reginald 'Rex' Copeland Plummer",
-							"Providence Hospital", 
-							"Dr Clarence A. Smith", 
-							"Dr Gideon A. Weed"
+							"Dr Reginald 'Rex' Copeland Plummer"
 						];
 		return $collections;
 	}

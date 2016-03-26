@@ -13,8 +13,23 @@
 
 			// GET variables
 			$id = $_GET["id"];
+			$newId = $id;
+			if (preg_match("/^126 /", $id)) {
+				$id = preg_replace("/^126 /", "", $id);
+				$table = "mckie";
+				$other = true;
+			} else if (preg_match("/^kol-/", $id)) {
+				$id = preg_replace("/^kol-/", "", $id);
+				$newId = $id;
+				$table = "koluda";
+				$other = true;
+			} else {
+				$table = $CURRENT_REV;
+				$mckie = false;
+			}
 			
-			$data = mysqli_query($mysqli_connection, "SELECT * FROM $CURRENT_REV WHERE number = $id");
+			$query = "SELECT * FROM $table WHERE number = '$id'";
+			$data = mysqli_query($mysqli_connection, $query);
 			$info = mysqli_fetch_array( $data );
 
 			function notAvailable() { ?>
@@ -35,19 +50,8 @@
 					<?php
 						if (!$info) {
 							woops();
-						} else { ?>
-						<div class="row">
-							<?php
-								if($id == 1){
-									?>
-									<a class="nav right" href="artifact.php?id=<?=$id + 1?>"><span> Next &gt;</span></a>
-								<?php } else {
-									?>
-									<a class="nav left" href="artifact.php?id=<?=$id - 1?>"><span> &lt; Previous</span></a>
-									<a class="nav right" href="artifact.php?id=<?=$id + 1?>"><span> Next &gt;</span></a>
-								<?php }
-							?>
-						</div>
+						} else { 
+					?>
 						<div class="row">
 							<div class="col-md-8 uw-content">
 								
@@ -58,6 +62,9 @@
 										$alt = "Artifact image";
 										$title = $info['name'];
 
+										if ($other) {
+											$img = "$table/50/" . $newId . ".jpg";
+										}
 										if (!file_exists($img)) {
 											$img = "HuskyDog.png";
 											$alt = "Husky dog";
@@ -65,7 +72,7 @@
 										} 
 									?>
 									<img src="<?=$img?>" alt="<?=$alt?>" title="<?=$title?>" />
-									<h2>Medical Specialty: <a href="http://depts.washington.edu/bodemer/category.php?c=<?=$info['uwDept']?>"><?=$info['uwDept']?></a></h2>
+									<h2>Medical Specialty: <a href="http://depts.washington.edu/bodemer/category.php?c=<?=$info['uwDept']?>"><?=$info['uwDept'] ? $info['uwDept'] : "None" ?></a></h2>
 									<hr />
 									<h2><span>Information</span></h2>
 									<ul>
@@ -81,7 +88,9 @@
 								</div>
 							</div>
 						</div>
-					<?php } ?>
+					<?php 
+						} 
+					?>
 				</div>
 				<?= footer(); ?>
 			</div>

@@ -44,6 +44,22 @@
 							<?php
 								$counter = 0;
 								while($info = mysqli_fetch_assoc($result)) {
+									if ($counter == 0) {
+							?>
+							<h1 class="physician_hdr"><?=$info['physician']?></h1>
+							<p class="sub">Click on image for item information</p>
+							<?php
+										if ($c == "peterkin") {
+											peterkin();
+										} else if ($c == "mckie") {
+											collection($mysqli_connection, "126 ", "mckie", "mckie-satchel.png", "Dr McKie's Satchel", true, "");
+
+										} else if ($c == "koluda") {
+											collection($mysqli_connection, "", "koluda", "koluda.jpg", "Dr Koluda's Medical Kit", false, "kol-");
+											$counter++;
+											break;
+										}	
+									}
 									$image = "artifact_images/" . $info['number'] . ".jpg";
 									$alt = "artifact number " . $info['number'];
 									$title = $info['name'];
@@ -51,34 +67,31 @@
 										$image = "HuskyDog.png";
 										$alt = "a cute Husky dog";
 										$title = "Artifact image not currently available";
-									}
+									} 
 
-									if ($counter == 0) { ?>
-										<h1 class="physician_hdr"><?=$info['physician']?></h1>
-									<?php
-										if ($c == "peterkin") {
-											peterkin();
-										}
-									?>
-										<p class="sub">Click on image for item information</p>
-									<?php } 
-										if ($counter % 3 == 0) { ?>
-											<div class="row">
-									<?php } ?>
-									<div class="collection-div col-md-4 col-sm-4 holder">
-										<a class="artifact_link" href="artifact.php?id=<?=$info['number']?>">
+								if ($counter == 0) { ?>
+							<div class="row">
+							<?php 
+								} else if ($counter % 3 == 0) { 
+							?>
+							</div>
+							<div class="row">
+								<?php 
+								} ?>
+										
+									<div class="col-md-4">
+										<a href="artifact.php?id=<?=$info['number']?>">
 											<img class="collection_item" src="<?=$image?>" alt="<?=$alt?>" title="<?=$title?>" />
 										</a>
 									</div>
-									<?php if ($counter % 3 == 2) { ?>
-										</div>
-									<?php }
-									$counter++;
-								}
-								if (($counter - 1) % 3 != 2) { ?>
-									</div>
-								<?php } 
-								if ($counter == 0) { woops(); }
+						
+								<?php 
+								$counter++;
+							}
+
+							if ($counter != 0) { ?>
+							</div>
+							<?php }
 							?>
 						</div>
 					</div>
